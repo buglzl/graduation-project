@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3305/secondhandgoodsssh_db?useUnicode=true&amp;characterEncoding=utf-8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/model/About.hbm.xml</value>
+				<value>com/model/Addr.hbm.xml</value>
+				<value>com/model/Car.hbm.xml</value>
+				<value>com/model/Chat.hbm.xml</value>
+				<value>com/model/Dddetail.hbm.xml</value>
+				<value>com/model/Ddinfo.hbm.xml</value>
+				<value>com/model/Fav.hbm.xml</value>
+				<value>com/model/Goods.hbm.xml</value>
+				<value>com/model/Imgadv.hbm.xml</value>
+				<value>com/model/Kcrecord.hbm.xml</value>
+				<value>com/model/Member.hbm.xml</value>
+				<value>com/model/Pj.hbm.xml</value>
+				<value>com/model/Ppinfo.hbm.xml</value>
+				<value>com/model/Protype.hbm.xml</value>
+				<value>com/model/Siteinfo.hbm.xml</value>
+				<value>com/model/Sysuser.hbm.xml</value>
+				<value>com/model/Yqlink.hbm.xml</value>
+				<value>com/model/Games.hbm.xml</value>
+				<value>com/model/Gamebm.hbm.xml</value>
+				<value>com/model/Qiugou.hbm.xml</value>
+				
+				
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="CommonDAO" class="com.dao.CommonDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="SysuserAction" class="com.action.SysuserAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="YqlinkAction" class="com.action.YqlinkAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ImgadvAction" class="com.action.ImgadvAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="AboutAction" class="com.action.AboutAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProtypeAction" class="com.action.ProtypeAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="PpinfoAction" class="com.action.PpinfoAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="PjAction" class="com.action.PjAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="GoodsAction" class="com.action.GoodsAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="KcrecordAction" class="com.action.KcrecordAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="DdinfoAction" class="com.action.DdinfoAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ChatAction" class="com.action.ChatAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="MemberAction" class="com.action.MemberAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="FavAction" class="com.action.FavAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="CarAction" class="com.action.CarAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="GamesAction" class="com.action.GamesAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	<bean id="QiugouAction" class="com.action.QiugouAction" scope="prototype">
+		<property name="commonDAO">
+			<ref bean="CommonDAO" />
+		</property>
+	</bean>
+	
+	
+	
+	
+	</beans>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="liu" extends="struts-default">
+	<action name="adminLogin" class="SysuserAction" method="adminLogin">
+	        <result name="success">/admin/index.jsp</result>
+	        <result name="erro">/admin/login.jsp</result>
+	</action>
+	<action name="adminPwdEdit" class="SysuserAction" method="adminPwdEdit">
+	        <result name="success">/admin/myaccount.jsp</result>
+	        <result name="erro">/admin/myaccount.jsp</result>
+	</action>
+	<action name="adminExit" class="SysuserAction" method="adminExit">
+	        <result name="success">/admin/login.jsp</result>
+	</action>
+	<action name="memberExit" class="SysuserAction" method="memberExit">
+	        <result name="success">/index.jsp</result>
+	</action>
+	<action name="usernamecheck" class="SysuserAction" method="usernamecheck">
+	        <result name="success">/admin/useradd.jsp</result>
+	</action>
+	<action name="useradd" class="SysuserAction" method="useradd">
+	        <result name="success">/admin/userlist.jsp</result>
+	</action>
+	<action name="useredit" class="SysuserAction" method="useredit">
+	        <result name="success">/admin/userlist.jsp</result>
+	</action>
+	
+	
+	<action name="yqlinkadd" class="YqlinkAction" method="yqlinkadd">
+	        <result name="success">/admin/yqlink.jsp</result>
+	</action>
+	<action name="yqlinkedit" class="YqlinkAction" method="yqlinkedit">
+	        <result name="success">/admin/yqlink.jsp</result>
+	</action>
+	
+	<action name="imgadvadd" class="ImgadvAction" method="imgadvadd">
+	        <result name="success">/admin/imgadv.jsp</result>
+	</action>
+	
+	<action name="aboutedit" class="AboutAction" method="aboutedit">
+	        <result name="success">/admin/aboutedit.jsp</result>
+	</action>
+	
+	<action name="protypeAdd" class="ProtypeAction" method="protypeAdd">
+	        <result name="success">/admin/protype.jsp</result>
+	</action>
+	<action name="protypeEdit" class="ProtypeAction" method="protypeEdit">
+	        <result name="success">/admin/protype.jsp</result>
+	</action>
+	<action name="searchsontype" class="ProtypeAction" method="searchsontype">
+	</action>
+	
+	<action name="ppinfoAdd" class="PpinfoAction" method="ppinfoAdd">
+	        <result name="success">/admin/ppinfo.jsp</result>
+	</action>
+	<action name="ppinfoEdit" class="PpinfoAction" method="ppinfoEdit">
+	        <result name="success">/admin/ppinfo.jsp</result>
+	</action>
+	
+	<action name="pjAdd" class="PjAction" method="pjAdd">
+	        <result name="success">/myorder.jsp</result>
+	</action>
+	<action name="pjhf" class="PjAction" method="pjhf">
+	        <result name="success">/pjhf.jsp</result>
+	</action>
+	
+	<action name="goodsadd" class="GoodsAction" method="goodsadd">
+	        <result name="success">/myproductadd.jsp</result>
+	</action>
+	<action name="goodsedit" class="GoodsAction" method="goodsedit">
+	        <result name="success">/myproductedit.jsp</result>
+	</action>
+	<action name="admingoodsedit" class="GoodsAction" method="admingoodsedit">
+	        <result name="success">/admin/goodsgl.jsp</result>
+	</action>
+	<action name="goodstjset" class="GoodsAction" method="goodstjset">
+	        <result name="success">/admin/goodsgl.jsp</result>
+	</action>
+	
+	<action name="kcrecordAdd" class="KcrecordAction" method="kcrecordAdd">
+	        <result name="success">/myproduct.jsp</result>
+	</action>
+	
+	<action name="createdd" class="DdinfoAction" method="createdd">
+	        <result name="success">/myorder.jsp</result>
+	</action>
+	<action name="ddfh" class="DdinfoAction" method="ddfh">
+	        <result name="success">/admin/ddgl.jsp</result>
+	</action>
+	<action name="tobuy" class="DdinfoAction" method="tobuy">
+	</action>
+	<action name="orderPay" class="DdinfoAction" method="orderPay">
+			<result name="success">/orderpay.jsp</result>
+	</action>
+	
+	<action name="fahuo" class="DdinfoAction" method="fahuo">
+			<result name="success">/saleproduct.jsp</result>
+	</action>
+	
+	<action name="thAdd" class="DdinfoAction" method="thAdd">
+			<result name="success">thapply.jsp</result>
+	</action>
+	
+	<action name="tyTuihuo" class="DdinfoAction" method="tyTuihuo">
+			<result name="success">saleproduct.jsp</result>
+	</action>
+	
+	<action name="shouhou" class="DdinfoAction" method="shouhou">
+			<result name="success">/myorder.jsp</result>
+	</action>
+	
+	
+	
+	
+	
+	<action name="chatadd" class="ChatAction" method="chatadd">
+	        <result name="success">/msg.jsp</result>
+	</action>
+	<action name="chatedit" class="ChatAction" method="chatedit">
+	        <result name="success">/admin/msglist.jsp</result>
+	</action>
+	
+	<action name="usernamecheck" class="MemberAction" method="usernamecheck">
+	</action>
+	
+	<action name="memberReg" class="MemberAction" method="memberReg">
+	        <result name="success">/reg.jsp</result>
+	</action>
+	<action name="memberLogin" class="MemberAction" method="memberLogin">
+	        <result name="success">/index.jsp</result>
+	        <result name="error">/login.jsp</result>
+	</action>
+	<action name="memberEdit" class="MemberAction" method="memberEdit">
+	        <result name="success">/memberinfo.jsp</result>
+	</action>
+	
+	<action name="chongzhiAdd" class="MemberAction" method="chongzhiAdd">
+	        <result name="success">/yue.jsp</result>
+	</action>
+	
+	<action name="finduPass" class="MemberAction" method="finduPass">
+	        <result name="success">/findupass.jsp</result>
+	</action>
+	
+	
+	
+	
+	<action name="cartAdd" class="CarAction" method="cartAdd">
+	</action>
+	<action name="cartDel" class="CarAction" method="cartDel">
+		<result name="success">/cart.jsp</result>
+	</action>
+	<action name="updatecart" class="CarAction" method="updatecart">
+	</action>
+	<action name="updatetprice" class="CarAction" method="updatetprice">
+	</action>
+	
+	<action name="favAdd" class="FavAction" method="favAdd">
+	</action>
+	
+	<action name="favDel" class="FavAction" method="favDel">
+		<result name="success">/fav.jsp</result>
+	</action>
+	
+	
+	
+	<action name="gamesadd" class="GamesAction" method="gamesadd">
+	        <result name="success">/admin/gameslist.jsp</result>
+	</action>
+	<action name="gamesedit" class="GamesAction" method="gamesedit">
+	        <result name="success">/admin/gameslist.jsp</result>
+	</action>
+	<action name="gamebm" class="GamesAction" method="gamebm">
+	        <result name="success">/games.jsp</result>
+	</action>
+	
+	<action name="qiugouAdd" class="QiugouAction" method="qiugouAdd">
+	        <result name="success">/publishqiougoulist.jsp</result>
+	</action>
+	<action name="qiugouEdit" class="QiugouAction" method="qiugouEdit">
+	        <result name="success">/publishqiougoulist.jsp</result>
+	</action>
+	
+	
+	
+    </package>
+</struts>
